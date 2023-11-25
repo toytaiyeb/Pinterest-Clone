@@ -1,2 +1,6 @@
 data assosiation
 
+joining one models data to another models data through its id. 
+That is if we have one user and he creates a post it should be created unter the same user only 
+when such kind of data is closely related to each other we connect them 
+by giving id to the other models data and the second id to the first modles data
