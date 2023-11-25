@@ -4,3 +4,13 @@ joining one models data to another models data through its id.
 That is if we have one user and he creates a post it should be created unter the same user only 
 when such kind of data is closely related to each other we connect them 
 by giving id to the other models data and the second id to the first modles data
+
+4bcQ46ZtgIIl7k4H
+
+/ route par login and signup hoga
+/profile par aapko aapki profile dikhegi and aapke saved posts dikhege, aur
+ek uploaded section hoga jo abhi nahi bana rahe
+/ feed yaha par saari images dikhegi
+/ click karke image Openn hojaayegi save kr skte ho
+/ board/ : boardname poora board dikhega
+

@@ -1,6 +1,10 @@
 
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://127.0.0.1:27017/tvboxed")
+mongoose.connect('mongodb+srv://toy24052003:toy1234@cluster0.riwxmuk.mongodb.net/tvboxed',).then(() => {
+  console.log('Connected to MongoDB');
+}).catch((error) => {
+  console.error('Error connecting to MongoDB:', error);
+});
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -12,7 +16,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  posts: [],
+  posts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Post'
+  }],
   dp: {
     type: String,
     
