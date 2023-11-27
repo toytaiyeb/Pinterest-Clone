@@ -11,8 +11,13 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/login', function(req, res, next) {
-  res.render('login', );
+
+  res.render('login', {error:req.flash('error')});
 });
+router.get('/feed', function(req, res, next) {
+  res.render('feed', );
+});
+
 
 router.post('/register', function(req, res) { 
   const { username, email, fullname } = req.body;
@@ -28,7 +33,8 @@ router.post('/register', function(req, res) {
 })
 router.post('/login',  passport.authenticate('local',{
   successRedirect: '/profile',
-  failureRedirect: '/',
+  failureRedirect: '/login',
+  failureFlash: true,
 }),function(req,res){
 });
 
@@ -49,8 +55,13 @@ function isLoggedIn(req,res,next)
 
 }
 
-router.get('/profile', isLoggedIn, function(req, res, next) {
-  res.send('profile')
+router.get('/profile', isLoggedIn, async function(req, res, next) {
+
+  let user=await userModel.findOne({username:req.session.passport.user});
+  //let posts=await postModel.find({user:req.session.passport.user})
+
+
+  res.render('profile', {user})
 });
 
 

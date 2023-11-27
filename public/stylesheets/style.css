@@ -85,6 +85,15 @@ h4 {
   background-color: #df0812;
 }
 
+.error {
+  font-weight: 500;
+  color: red;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 7px 0px;
+
+
+}
 .or {
   font-size: 15px;
   font-weight: 700;
