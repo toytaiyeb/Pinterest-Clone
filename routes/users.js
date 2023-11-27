@@ -1,5 +1,8 @@
 
 const mongoose = require('mongoose');
+const plm=require('passport-local-mongoose');
+
+
 mongoose.connect('mongodb+srv://toy24052003:toy1234@cluster0.riwxmuk.mongodb.net/tvboxed',).then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {
@@ -14,7 +17,7 @@ const userSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    
   },
   posts: [{
     type: mongoose.Schema.Types.ObjectId,
@@ -29,12 +32,14 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true
   },
-  fullName: {
+  fullname: {
     type: String,
     required: true
   }
 });
 
+
+userSchema.plugin(plm);
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
