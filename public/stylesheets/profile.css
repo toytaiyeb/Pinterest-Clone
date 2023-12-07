@@ -4,6 +4,11 @@ body {
     margin: 0;
     padding: 0;
   }
+  .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
   
   .containerpers {
     max-width: 80%;

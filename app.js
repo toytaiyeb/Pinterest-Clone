@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 const passport = require('passport');
 const flash= require('connect-flash');
 
+
 var app = express();
 
 // view engine setup
@@ -29,7 +30,7 @@ passport.serializeUser(usersRouter.serializeUser());
 passport.deserializeUser(usersRouter.deserializeUser());
 
 
-
+// app.use('/upload', indexRouter)
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
